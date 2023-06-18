@@ -21,7 +21,7 @@ it redirects the user to the page list.
 */
 
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createPage } from '../../services/api';
 
 const CreatePage = () => {

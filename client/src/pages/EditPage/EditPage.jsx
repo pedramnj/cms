@@ -16,7 +16,7 @@ After successful update, it redirects the user to the page detail.
 */
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getPageById, updatePage } from '../../services/api';
 
 const EditPage = () => {

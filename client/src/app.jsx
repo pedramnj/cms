@@ -12,13 +12,15 @@ The Navbar component is rendered at the top and receives the isAuthenticated sta
 */
 
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HomePage from './FrontOffice/HomePage';
-import PageDetails from './FrontOffice/PageDetails';
-import CreatePage from './Pages/CreatePage';
-import EditPage from './Pages/EditPage';
-import BackOffice from './BackOffice/BackOffice';
-import Navbar from './Navbar';
+import { Routes ,Route } from 'react-router-dom';
+import HomePage from './components/FrontOffice/HomePage';
+import PageDetails from './components/FrontOffice/PageDetail';
+import CreatePage from './pages/CreatePage/CreatePage';
+import EditPage from './/pages/EditPage/EditPage';
+import CreatePageForm from './components/Backoffice/CreatePageForm';
+import EditPageForm from './components/Backoffice/EditPageForm';
+import PageList from './components/Backoffice/PageList';
+import Navbar from './components/Navbar';
 import { checkAuth } from './Services/auth';
 
 const App = () => {

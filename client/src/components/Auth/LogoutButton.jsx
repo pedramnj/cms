@@ -1,7 +1,7 @@
 //Component for rendering the logout button.
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { logout } from '../../services/auth';
+import { logout } from '../../Services/auth';
 
 const LogoutButton = () => {
   const history = useHistory();

@@ -12,7 +12,7 @@ The page.id is used as the key for the list item and the page.title is displayed
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getPages } from '../../services/api';
+import { getPublishedPages } from '../../services/api';
 
 const PageList = () => {
   const [pages, setPages] = useState([]);

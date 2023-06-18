@@ -14,8 +14,8 @@ If the page update is successful, the user is redirected to the back-office page
 purposes. */
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import { getPage, updatePage } from '../../services/api';
+import { useParams, useNavigate } from 'react-router-dom';
+import { getPageById, updatePage } from '../../services/api';
 
 const EditPageForm = () => {
   const { pageId } = useParams();
