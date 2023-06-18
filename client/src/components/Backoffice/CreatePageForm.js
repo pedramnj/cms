@@ -1,0 +1,1 @@
+//Component for rendering the form to create a new page.

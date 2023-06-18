@@ -1,0 +1,1 @@
+// Component representing the homepage of the application

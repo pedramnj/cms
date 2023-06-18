@@ -1,0 +1,1 @@
+//The main component that acts as the entry point for the React

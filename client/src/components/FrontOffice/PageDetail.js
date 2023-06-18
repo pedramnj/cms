@@ -1,0 +1,1 @@
+//Component for rendering the details of a specific page.
