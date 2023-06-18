@@ -11,5 +11,4 @@ ensuring that it's rendered within the specified root element.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
-
 ReactDOM.render(<App />, document.getElementById('root'));
