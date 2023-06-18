@@ -12,6 +12,7 @@ either as a header (h5), paragraph (p), or image (img). */
 
 import React, { useEffect, useState } from 'react';
 import { getPublishedPages } from '../../services/api';
+import './HomePage.css';
 
 const HomePage = () => {
   const [pages, setPages] = useState([]);
@@ -26,26 +27,25 @@ const HomePage = () => {
       setPages(pagesData);
     } catch (error) {
       console.log('Fetch published pages failed:', error.message);
-      // Handle fetch published pages error (display error message, etc.)
     }
   };
 
   return (
-    <div>
-      <h2>Website Name</h2>
-      <h3>Latest Pages</h3>
+    <div className="home-container">
+      <h2 className="website-name">Website Name</h2>
+      <h3 className="latest-pages-heading">Latest Pages</h3>
       {pages.length === 0 ? (
-        <p>No pages found.</p>
+        <p className="no-pages">No pages found.</p>
       ) : (
-        <ul>
+        <ul className="page-list">
           {pages.map((page) => (
-            <li key={page.id}>
-              <h4>{page.title}</h4>
-              <p>Author: {page.author}</p>
-              <p>Publication Date: {page.publicationDate}</p>
-              <div>
+            <li key={page.id} className="page-item">
+              <h4 className="page-title">{page.title}</h4>
+              <p className="author">Author: {page.author}</p>
+              <p className="publication-date">Publication Date: {page.publicationDate}</p>
+              <div className="content-blocks">
                 {page.blocks.map((block, index) => (
-                  <div key={index}>
+                  <div key={index} className={`block block-${block.type}`}>
                     {block.type === 'header' && <h5>{block.content}</h5>}
                     {block.type === 'paragraph' && <p>{block.content}</p>}
                     {block.type === 'image' && <img src={block.src} alt="" />}

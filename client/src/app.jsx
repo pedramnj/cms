@@ -12,7 +12,7 @@ The Navbar component is rendered at the top and receives the isAuthenticated sta
 */
 
 import React, { useEffect, useState } from 'react';
-import { Routes ,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/FrontOffice/HomePage';
 import PageDetails from './components/FrontOffice/PageDetail';
 import CreatePage from './pages/CreatePage/CreatePage';
@@ -22,6 +22,7 @@ import EditPageForm from './components/Backoffice/EditPageForm';
 import PageList from './components/Backoffice/PageList';
 import Navbar from './components/Navbar';
 import { checkAuth } from './Services/auth';
+import LoginForm from '../src/components/Auth/LoginForm'
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,9 +43,10 @@ const App = () => {
   return (
     <Router>
       <Navbar isAuthenticated={isAuthenticated} />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/pages/:id" component={PageDetails} />
+      <Routes>
+        <Route exact path="/" element={<HomePage/>} />
+        <Route exact path="/login" element={<LoginForm/>} /> 
+        <Route path="/pages/:id" element={<PageDetails/>} />
         <Route
           path="/backoffice"
           render={(props) => <BackOffice {...props} isAuthenticated={isAuthenticated} />}
@@ -57,7 +59,7 @@ const App = () => {
           path="/edit-page/:id"
           render={(props) => <EditPage {...props} isAuthenticated={isAuthenticated} />}
         />
-      </Switch>
+      </Routes>
     </Router>
   );
 };

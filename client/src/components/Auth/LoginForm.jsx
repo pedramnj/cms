@@ -1,12 +1,13 @@
 //Component for rendering the login form.
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { login } from '../services/auth';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../Services/auth';
+import './LoginForm.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -28,34 +29,43 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+    <div className="login-form">
+    <h2 className="login-form-title">Login</h2>
+    <form onSubmit={handleSubmit} className="login-form-container">
+      <div>
+        <label htmlFor="username" className="login-form-label">
+          Username:
+        </label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+          className="login-form-input"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="password" className="login-form-label">
+          Password:
+        </label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          className="login-form-input"
+          required
+        />
+      </div>
+      <button type="submit" className="login-form-button">
+        Login
+      </button>
+    </form>
+  </div>
+);
 };
+
 
 export default LoginForm;
 

@@ -1,0 +1,60 @@
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .website-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .latest-pages-heading {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .no-pages {
+    margin-top: 20px;
+  }
+  
+  .page-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .page-item {
+    margin-bottom: 40px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .author, .publication-date {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .content-blocks {
+    margin-top: 20px;
+  }
+  
+  .block {
+    margin-bottom: 10px;
+  }
+  
+  .block-header {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .block-paragraph {
+    font-size: 14px;
+  }
+  
+  .block-image img {
+    max-width: 100%;
+  }
+  
