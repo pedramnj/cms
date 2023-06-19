@@ -15,7 +15,7 @@ purposes. */
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getPageById, updatePage } from '../../services/api';
+import { getPageById, updatePage } from '../../Services/api';
 
 const EditPageForm = () => {
   const { pageId } = useParams();
