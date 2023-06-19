@@ -1,10 +1,11 @@
 //Component for rendering the logout button.
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { logout } from '../../Services/auth';
+import './LoginForm.css';
 
 const LogoutButton = () => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -17,7 +18,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleLogout}>
+    <button className="login-form-button" onClick={handleLogout}>
       Logout
     </button>
   );

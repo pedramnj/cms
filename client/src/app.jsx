@@ -23,6 +23,7 @@ import PageList from './components/Backoffice/PageList';
 import Navbar from './components/Navbar';
 import { checkAuth } from './Services/auth';
 import LoginForm from '../src/components/Auth/LoginForm'
+import LogoutButton from '../src/components/Auth/LogoutButton'
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,8 +46,12 @@ const App = () => {
       <Navbar isAuthenticated={isAuthenticated} />
       <Routes>
         <Route exact path="/" element={<HomePage/>} />
+        <Route exact path="/create" element={<CreatePage/>} />
         <Route exact path="/login" element={<LoginForm/>} /> 
+        <Route exact path="/logout" element={<LogoutButton/>} /> 
         <Route path="/pages/:id" element={<PageDetails/>} />
+
+   
         <Route
           path="/backoffice"
           render={(props) => <BackOffice {...props} isAuthenticated={isAuthenticated} />}

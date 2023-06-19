@@ -21,7 +21,7 @@ import { getPageById, updatePage } from '../../services/api';
 
 const EditPage = () => {
   const { pageId } = useParams();
-  const history = useHistory();
+  const history = useNavigate();
   const [title, setTitle] = useState('');
   const [blocks, setBlocks] = useState([]);
   const [selectedImage, setSelectedImage] = useState('');

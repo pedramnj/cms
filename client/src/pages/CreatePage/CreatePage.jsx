@@ -23,9 +23,9 @@ it redirects the user to the page list.
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPage } from '../../services/api';
-
+import './CreatePage.css'
 const CreatePage = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const [title, setTitle] = useState('');
   const [blocks, setBlocks] = useState([]);
   const [selectedImage, setSelectedImage] = useState('');
@@ -86,35 +86,36 @@ const CreatePage = () => {
   };
 
   return (
-    <div>
-      <h2>Create Page</h2>
+    <div className="container">
+      <h2 className="title">Create Page</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label>
-          <input type="text" value={title} onChange={handleTitleChange} required />
+        <div className="form-group">
+          <label className="label">Title:</label>
+          <input type="text" value={title} onChange={handleTitleChange} className="input" required />
         </div>
-        <div>
-          <label>Blocks:</label>
+        <div className="form-group">
+          <label className="label">Blocks:</label>
           {blocks.map((block, index) => (
-            <div key={index}>
+            <div className="form-group" key={index}>
               <input
+              className="label"
                 type="text"
                 value={block}
                 onChange={(e) => handleBlockChange(index, e.target.value)}
                 required
               />
-              <button type="button" onClick={() => handleRemoveBlock(index)}>
+              <button type="button" className="button" onClick={() => handleRemoveBlock(index)}>
                 Remove Block
               </button>
             </div>
           ))}
-          <button type="button" onClick={handleAddBlock}>
+          <button type="button" className="button" onClick={handleAddBlock}>
             Add Block
           </button>
         </div>
-        <div>
-          <label>Select Image:</label>
-          <select value={selectedImage} onChange={handleImageChange} required>
+        <div className="form-group">
+          <label className="label">Select Image:</label>
+          <select value={selectedImage} onChange={handleImageChange} className="input" required>
             <option value="">Select an image</option>
             {images.map((image) => (
               <option key={image.id} value={image.src}>
@@ -123,7 +124,7 @@ const CreatePage = () => {
             ))}
           </select>
         </div>
-        <button type="submit">Create Page</button>
+        <button type="submit" className="button">Create Page</button>
       </form>
     </div>
   );
