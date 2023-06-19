@@ -1,7 +1,7 @@
 //Component for rendering the form to create a new page.
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createPage } from '../../services/api';
+import { createPage } from '../../Services/api';
 
 const CreatePageForm = () => {
   const [title, setTitle] = useState('');
