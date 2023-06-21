@@ -13,7 +13,8 @@ The Navbar component is rendered at the top and receives the isAuthenticated sta
 
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/FrontOffice/HomePage';
+import HomePage from './components/PostList';
+import Footer from "./components/Footer";
 import PageDetails from './components/FrontOffice/PageDetail';
 import CreatePage from './pages/CreatePage/CreatePage';
 import EditPage from './/pages/EditPage/EditPage';

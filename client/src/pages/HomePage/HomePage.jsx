@@ -12,7 +12,7 @@ If there are no published pages, it displays a message indicating that no publis
 */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getPublishedPages } from '../../services/api';
+import { getPublishedPages } from '../../Services/api';
 
 const HomePage = () => {
   const [pages, setPages] = useState([]);
